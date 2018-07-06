@@ -27,9 +27,6 @@ use Symfony\Component\HttpKernel\Controller\ArgumentResolver;
 use YoungFramework\Kernel;
 use YoungFramework\ErrorController;
 
-//use YoungFramework\Controller\ErrorController;
-
-//require_once 'YoungFramework/Kernel.php';
 require_once 'YoungFramework/Kernel.php';
 
 $containerBuilder = new ContainerBuilder();
@@ -37,7 +34,7 @@ $containerBuilder = new ContainerBuilder();
 $containerBuilder->register('context', RequestContext::class);
 $containerBuilder
     ->register('matcher', UrlMatcher::class)
-      ->setArguments([$routes, new Reference('context')]);
+        ->setArguments([$routes, new Reference('context')]);
 $containerBuilder->register('controller_resolver', ControllerResolver::class);
 $containerBuilder->register('argument_resolver', ArgumentResolver::class);
 $containerBuilder->register('stack', RequestStack::class);
