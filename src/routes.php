@@ -17,8 +17,6 @@ require_once __DIR__ . '/../vendor/autoload.php';
 use Symfony\Component\Routing\RouteCollection;
 use Symfony\Component\Routing\Route;
 
-class LController{public function index(){return new \Symfony\Component\HttpFoundation\JsonResponse('asdasd');}}
-
 $routes = new RouteCollection();
 
 $routes->add('hello', new Route('/hello/'), ['_controller' => function(){return new JsonResponse('ok');}]);
